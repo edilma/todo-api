@@ -1,5 +1,5 @@
 {
   "projects": {
-    "default": "express-deployed-er"
+    "default": "todo-api-er"
   }
 }
