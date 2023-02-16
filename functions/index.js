@@ -10,6 +10,6 @@ app.use(express.json())
 app.get("/tasks", getAllTasks)
 app.post("/tasks", addTask)
 app.patch("/tasks/:taskId", updateTask)
-app.delete ("tasks/:taskId", deleteTask)
+app.delete("/tasks/:taskId", deleteTask)
 
 export const api= functions.https.onRequest(app)

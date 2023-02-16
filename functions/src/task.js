@@ -31,8 +31,7 @@ export async function updateTask (req,res){
     const {taskId} = req.params;
     const {task} = req.body
     const db = await getFirestoreInstance();
-    
-    db.collection("taks")
+    db.collection("tasks")
         .doc(taskId)
         .update({task})
         .then(()=>getAllTasks(req,res))
@@ -47,7 +46,7 @@ export async function deleteTask(req, res){
     db.collection("tasks")
         .doc(taskId)
         .delete()
-        .then(() => getAllTasks(req.res))
+        .then(() => getAllTasks(req, res))
         .catch(err => res.status(500).send({error: err.message}))
 }
 
