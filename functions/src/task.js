@@ -29,11 +29,11 @@ export async function addTask(req,res){
 
 export async function updateTask (req,res){
     const {taskId} = req.params;
-    const {task} = req.body
+    const {done} = req.body
     const db = await getFirestoreInstance();
     db.collection("tasks")
         .doc(taskId)
-        .update({task})
+        .update({done})
         .then(()=>getAllTasks(req,res))
         .catch(err => res.status(500).send({error: err.message}))
 }
